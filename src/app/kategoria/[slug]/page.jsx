@@ -13,6 +13,7 @@ export default function CategoryPage() {
 
     if (!category) return <div className="p-6 text-center">Brak kategorii.</div>;
 
+    // Caso 1: con suddivisione per gender (usługi fryzjerskie)
     if (category.hasGenderSplit) {
         return (
             <main className="min-h-screen bg-white p-6 flex flex-col items-center">
@@ -32,7 +33,27 @@ export default function CategoryPage() {
         );
     }
 
-    // Flat service list
+    // Caso 2: con suddivisione per sottosezioni (es. kosmetologia estetyczna)
+    if (category.subsections?.length > 0) {
+        return (
+            <main className="min-h-screen bg-white p-6 flex flex-col items-center">
+                <h1 className="text-2xl font-bold mb-6">{category.label}</h1>
+                <div className="flex flex-col gap-4 w-full max-w-sm">
+                    {category.subsections.map((section, idx) => (
+                        <Link
+                            key={idx}
+                            href={`/kategoria/${slug}/sekcja-${idx}`}
+                            className="bg-pink-100 text-center py-4 px-2 rounded-xl text-lg font-medium hover:bg-pink-200 transition"
+                        >
+                            {section.title}
+                        </Link>
+                    ))}
+                </div>
+            </main>
+        );
+    }
+
+    // Caso 3: lista piatta di servizi
     return (
         <main className="min-h-screen bg-white p-6 flex flex-col items-center">
             <h1 className="text-2xl font-bold mb-6">{category.label}</h1>
@@ -41,7 +62,7 @@ export default function CategoryPage() {
                     category.services.map((service, idx) => (
                         <a
                             key={idx}
-                            href={service.url}
+                            href={service.url || "#"}
                             className="bg-pink-100 text-center py-4 rounded-xl text-lg font-medium hover:bg-pink-200 transition"
                         >
                             {service.name}
