@@ -5,7 +5,8 @@ export const salons = {
       categories: [
         {
           slug: "uslugi-fryzjerskie",
-          label: "💇‍♀️ Usługi fryzjerskie",
+          label: "Usługi fryzjerskie",
+          image:"/images/hairstylist.png",
           hasGenderSplit: true,
           genders: {
             damskie: {
@@ -111,7 +112,8 @@ export const salons = {
         },
         {
             slug: "kosmetologia-estetyczna",
-            label: "💆‍♀️ Kosmetologia estetyczna",
+            label: "Kosmetologia estetyczna",
+            image:"/images/botox.png",
             subsections: [
               {
                 title: "PROFHILO®  – Remodeling tkanek i ujędrnianie skóry",
@@ -161,7 +163,8 @@ export const salons = {
           },          
         {
             slug: "manicure",
-            label: "💅 Manicure",
+            label: "Manicure",
+            image:"/images/manicure.png",
             services: [
               {
                 name: "💅 Manicure hybrydowy – IZA",
@@ -171,22 +174,26 @@ export const salons = {
           },
           {
             slug: "pedicure",
-            label: "🦶 Pedicure",
+            label: "Pedicure",
+            image:"/images/pedicure.png",
             services: []
           },
           {
             slug: "depilacje",
-            label: "🧼 Depilacje",
+            label: "Depilacje",
+            image:"/images/wax.png",
             services: []
           },
           {
             slug: "inne-uslugi-kosmetyczne",
-            label: "🧴 Inne usługi kosmetyczne",
+            label: "Inne usługi kosmetyczne",
+            image:"/images/inne.png",
             services: []
           },
           {
             slug: "wellness-spa",
-            label: "🧖‍♀️ Wellness & SPA",
+            label: "Wellness & SPA",
+            image:"/images/spa.png",
             services: [],
           }
       ],
